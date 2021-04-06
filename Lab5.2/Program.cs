@@ -32,7 +32,6 @@ namespace Lab5._2
     {
         public override Roshambo GenerateRoshambo(Random rnd)
         {
-
             int rndNum = rnd.Next(0, 3); // needs to be 1 higher than the actual values returned
             return (Roshambo)rndNum;
         }
