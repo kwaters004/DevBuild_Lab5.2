@@ -1,0 +1,13 @@
+C:\Users\kwaters\dev\Lab5.2\Lab5.2\bin\Debug\netcoreapp3.1\Lab5.2.exe
+C:\Users\kwaters\dev\Lab5.2\Lab5.2\bin\Debug\netcoreapp3.1\Lab5.2.deps.json
+C:\Users\kwaters\dev\Lab5.2\Lab5.2\bin\Debug\netcoreapp3.1\Lab5.2.runtimeconfig.json
+C:\Users\kwaters\dev\Lab5.2\Lab5.2\bin\Debug\netcoreapp3.1\Lab5.2.runtimeconfig.dev.json
+C:\Users\kwaters\dev\Lab5.2\Lab5.2\bin\Debug\netcoreapp3.1\Lab5.2.dll
+C:\Users\kwaters\dev\Lab5.2\Lab5.2\bin\Debug\netcoreapp3.1\Lab5.2.pdb
+C:\Users\kwaters\dev\Lab5.2\Lab5.2\obj\Debug\netcoreapp3.1\Lab5.2.csprojAssemblyReference.cache
+C:\Users\kwaters\dev\Lab5.2\Lab5.2\obj\Debug\netcoreapp3.1\Lab5.2.AssemblyInfoInputs.cache
+C:\Users\kwaters\dev\Lab5.2\Lab5.2\obj\Debug\netcoreapp3.1\Lab5.2.AssemblyInfo.cs
+C:\Users\kwaters\dev\Lab5.2\Lab5.2\obj\Debug\netcoreapp3.1\Lab5.2.csproj.CoreCompileInputs.cache
+C:\Users\kwaters\dev\Lab5.2\Lab5.2\obj\Debug\netcoreapp3.1\Lab5.2.dll
+C:\Users\kwaters\dev\Lab5.2\Lab5.2\obj\Debug\netcoreapp3.1\Lab5.2.pdb
+C:\Users\kwaters\dev\Lab5.2\Lab5.2\obj\Debug\netcoreapp3.1\Lab5.2.genruntimeconfig.cache
