@@ -14,14 +14,18 @@ namespace Lab5._2
 
     abstract class Player
     {
-        //private string name;
+        public string name { get; set; }
         //private Roshambo rkpprsci;
+
+
 
         public abstract Roshambo GenerateRoshambo(Random rnd);
     }
 
     class Brock : Player // This is the player that will always choose Rock
     {
+        public string name = "Brock";
+
         public override Roshambo GenerateRoshambo(Random rnd)
         {
             return new Roshambo();
@@ -30,6 +34,7 @@ namespace Lab5._2
 
     class Misty : Player
     {
+        public string name = "Misty";
         public override Roshambo GenerateRoshambo(Random rnd)
         {
             int rndNum = rnd.Next(0, 3); // needs to be 1 higher than the actual values returned
@@ -39,6 +44,12 @@ namespace Lab5._2
 
     class Human : Player
     {
+        public string name;
+        public Human(string Name)
+        {
+            name = Name;
+        }
+
         public override Roshambo GenerateRoshambo(Random rnd)
         {
             int humanNum = 0;
@@ -118,8 +129,11 @@ namespace Lab5._2
             }
             return false;
         }
-        static Roshambo GetOpponentPick(ref string oppName, Player opponent, Player opponent2, Random rnd)
+        static Roshambo GetOpponentPick(ref string oppName, Random rnd)
         {
+            Brock opponent = new Brock();
+            Misty opponent2 = new Misty();
+
 
             bool validName = false;
             while (!validName)
@@ -127,10 +141,10 @@ namespace Lab5._2
                 Console.Write("Would you like to play against Brock or Misty? ");
                 oppName = Console.ReadLine().ToLower();
 
-                if (oppName == "brock" || oppName == "misty")
+                if (oppName == opponent.name.ToLower() || oppName == opponent2.name.ToLower())
                 {
                     validName = true;
-                    if (oppName == "brock")
+                    if (oppName == opponent.name.ToLower())
                     {
                         return opponent.GenerateRoshambo(rnd);
 
@@ -143,7 +157,6 @@ namespace Lab5._2
                 else
                 {
                     Console.WriteLine("Sorry, that was not a valid option. Please try again");
-
                 }
             }
 
@@ -155,10 +168,10 @@ namespace Lab5._2
             {
                 return ("It's a tie!!");
             }
-            else if (playerPick == 0)
+            else if (playerPick == Roshambo.rock)
             {
 
-                if ((int)opponentPick == 1)
+                if (opponentPick == Roshambo.paper)
                 {
                     return ($"{oppName} Wins!");
                 }
@@ -167,9 +180,9 @@ namespace Lab5._2
                     return ($"{playerName} Wins!");
                 }
             }
-            else if ((int)playerPick == 1)
+            else if (playerPick == Roshambo.paper)
             {
-                if (opponentPick == 0)
+                if (opponentPick == Roshambo.rock)
                 {
                     return ($"{playerName} Wins!");
                 }
@@ -178,9 +191,9 @@ namespace Lab5._2
                     return ($"{oppName} Wins!");
                 }
             }
-            else if ((int)playerPick == 2)
+            else if (playerPick == Roshambo.scissors)
             {
-                if (opponentPick == 0)
+                if (opponentPick == Roshambo.rock)
                 {
                     return ($"{oppName} Wins!");
                 }
@@ -201,9 +214,8 @@ namespace Lab5._2
             Dictionary<string, int> wins = new Dictionary<string, int>();
 
             Console.Write("What is your name? ");
-            string playerName = Console.ReadLine();
-            Brock opponent = new Brock();
-            Misty opponent2 = new Misty();
+            Human player = new Human(Console.ReadLine());
+
 
             bool done = false;
             while (!done)
@@ -212,15 +224,15 @@ namespace Lab5._2
 
                 Roshambo opponentPick = (Roshambo)0;
                 string oppName = "";
-                opponentPick = GetOpponentPick(ref oppName, opponent, opponent2, rnd);
-                Human player = new Human();
+                opponentPick = GetOpponentPick(ref oppName, rnd);
+                
                 Roshambo playerPick = player.GenerateRoshambo(rnd);
 
                 oppName = ti.ToTitleCase(oppName);
-                Console.WriteLine($"\n{playerName} picked {playerPick}");
+                Console.WriteLine($"\n{player.name} picked {playerPick}");
                 Console.WriteLine($"{oppName} picked {opponentPick}\n");
 
-                string winner = DetermineWinner(playerPick, opponentPick, oppName, playerName);
+                string winner = DetermineWinner(playerPick, opponentPick, oppName, player.name);
                 WinTracker(wins, winner);
                 Console.WriteLine(winner);
 
