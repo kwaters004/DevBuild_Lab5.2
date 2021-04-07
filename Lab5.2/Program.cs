@@ -24,7 +24,10 @@ namespace Lab5._2
 
     class Brock : Player // This is the player that will always choose Rock
     {
-        public string name = "Brock";
+        public Brock()
+        {
+            name = "Brock";
+        }
 
         public override Roshambo GenerateRoshambo(Random rnd)
         {
@@ -34,7 +37,10 @@ namespace Lab5._2
 
     class Misty : Player
     {
-        public string name = "Misty";
+        public Misty()
+        {
+            name = "Misty";
+        }
         public override Roshambo GenerateRoshambo(Random rnd)
         {
             int rndNum = rnd.Next(0, 3); // needs to be 1 higher than the actual values returned
@@ -44,7 +50,6 @@ namespace Lab5._2
 
     class Human : Player
     {
-        public string name;
         public Human(string Name)
         {
             name = Name;
@@ -225,7 +230,7 @@ namespace Lab5._2
                 Roshambo opponentPick = (Roshambo)0;
                 string oppName = "";
                 opponentPick = GetOpponentPick(ref oppName, rnd);
-                
+
                 Roshambo playerPick = player.GenerateRoshambo(rnd);
 
                 oppName = ti.ToTitleCase(oppName);
